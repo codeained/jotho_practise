@@ -1,0 +1,86 @@
+input output redirection redirects the output of command to files, devices and even input of other commands. 
+Standard Output > example ls > file_list.txt
+redirecting merans no output is printed to the screen.
+Using the character > again ovewrites the initial content 
+
+The character >> appends the new results to the file. 
+
+Standard Input <
+Redirects contents from standard input 
+exampme - sort < jotho_file
+results are printed on display 
+to redictect 
+
+sort < jotho_file > sorted-jotho_file
+
+Pipelines 
+When multiple commands are connected together 
+STD output 
+example ls -lt | head 
+Displays all the files in long format from newest in a scrolling format
+
+du | sort -nr 
+du - estimate file space usage of a file/directory
+ | redicrects output of du into sort 
+sort - sorts output of du command 
+-n treats output as numerical not text 
+-r reverse order of output ie largest files first 
+
+example 2 
+find . -type f -print | wc -l 
+find -search 
+type f - only files 
+print print naame of eaxh file 
+wc - count number of lines/words/characters
+-l specifies that only lines should be counted 
+
+filters 
+sort - sort SI and outputs sorted data in SO
+uniq - remove duplicate lines of data 
+grep - examine and output line that contains specified pattern of charcaters 
+fmt - read text from SI nad outputs formatted text on standard output 
+pr - split data into pages with page breaks, headers and footers in preparation for printing 
+head 
+tail 
+tr - translate characters 
+
+	example cat jotho_fle | tr '[:lower:]' '[:upper:]'
+		cat jotho _file | tr -d 'x' deletes x 
+sed - stream editor text translations 
+awk - 
+
+
+SPECIAL CHARACTERS 
+evaluated bh bash to have an alternate meaning or carry out special instruction 
+" " - whitespace 
+$ expansion - introduces various types of expansion
+
+   	- represent shell variable or environment variable 
+		exampe my_var = "hello, world!"
+			echo $my_var
+	- Environemnt variables 
+		set and maintained by shell - used by programs to get information about the environemnt in which they are running 
+
+		example - echo $PATH , $USER $HOME 
+
+	- Command substution
+		execute a command and use its output as part of another command 
+		echo $(ls | wc -l) 
+
+ 
+' ' - single quotes protect text inside them 
+" " - double quotes - protect text iside them 
+\ escape 
+# comment 
+= assign a special value to a variable 
+[[ ]] test - evaluates a conditional expression 
+! negate - negate or reverse a test or exit status 
+> >> redirection 
+| PIPELINE 
+(( )) Arithmetic expression - (( a= 1+3))
+$(( )) - arithmetic expansion 
+* , ? Globs - match parts of filenames
+& background - run command in the background when used at the end of a command 
+( ) - subshell group 
+; command separator - separate multiple commands ina single line 
+ 
